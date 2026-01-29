@@ -25,15 +25,30 @@ purpose: {{purpose}}
 ### 1. 研究问题
 > {{quote_question}} (p.{{page_question}})
 
+{{#if image_question}}
+![研究问题相关图表]({{image_question_path}})
+*Figure (p.{{page_question}})*
+{{/if}}
+
 **解析**: {{analysis_question}}
 
 ### 2. 方法论
 > {{quote_method}} (p.{{page_method}})
 
+{{#if image_method}}
+![方法论相关图表]({{image_method_path}})
+*Figure (p.{{page_method}})*
+{{/if}}
+
 **解析**: {{analysis_method}}
 
 ### 3. 关键结论
 > {{quote_conclusion}} (p.{{page_conclusion}})
+
+{{#if image_conclusion}}
+![结论相关图表]({{image_conclusion_path}})
+*Figure (p.{{page_conclusion}})*
+{{/if}}
 
 **解析**: {{analysis_conclusion}}
 
