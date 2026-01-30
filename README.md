@@ -13,7 +13,7 @@
 ## 安装
 
 ```bash
-pip install pymupdf pdfplumber pypdfium2 Pillow
+pip install pymupdf
 ```
 
 验证安装：
@@ -35,12 +35,20 @@ python scripts/extract_content.py paper.pdf --purpose deep_dive
 
 # 方法学习模式 (聚焦方法论图表)
 python scripts/extract_content.py paper.pdf --purpose method_focus
+
+# 初学者入门模式 (解释学术概念)
+python scripts/extract_content.py paper.pdf --purpose beginner
 ```
+
+输出目录：会在 `paper.pdf` 同目录下创建同名文件夹 `paper/`，并将 `figures/` 写入其中。
 
 ### 2. 标注 PDF
 
 ```bash
-python scripts/annotate_pdf.py input.pdf annotations.json output.pdf --auto-notes
+python scripts/annotate_pdf.py input.pdf annotations.json output.pdf
+
+# 关闭术语注释
+python scripts/annotate_pdf.py input.pdf annotations.json output.pdf --no-terms
 ```
 
 标注 JSON 格式：
@@ -61,6 +69,7 @@ python scripts/annotate_pdf.py input.pdf annotations.json output.pdf --auto-note
 | `method_focus` | 钻研方法细节 | 最多4个 |
 | `review_prep` | 综述准备 | 最多10个 |
 | `brainstorm` | 寻找创新点 | 最多3个 |
+| `beginner` | 初学者入门 | 最多3个 |
 
 ## 标注颜色规范
 
@@ -72,6 +81,7 @@ python scripts/annotate_pdf.py input.pdf annotations.json output.pdf --auto-note
 | `question` | 红色 | 存疑/局限 |
 | `quote` | 紫色 | 可引用原文 |
 | `background` | 橙色 | 背景知识 |
+| `term` | 浅蓝 | 学术术语注释 |
 
 ## 目录结构
 

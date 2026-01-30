@@ -21,18 +21,38 @@ purpose: {{purpose}}
 
 ---
 
+{{#if is_beginner}}
+## 核心概念解释 (初学者必读)
+
+本节解释文中出现的关键学术术语，帮助初学者理解论文内容。
+
+| 术语 | 解释 | 作用/场景 |
+|------|------|----------|
+{{#each key_terms}}
+| **{{this.term}}** | {{this.definition}} | {{this.usage}} |
+{{/each}}
+
+---
+{{/if}}
+
 ## 核心图表
 
-{{#if figures}}
 {{#each figures}}
+{{#if this.extractable}}
 ### {{this.caption}}
 ![{{this.caption}}]({{this.path}})
-*{{this.caption}} (p.{{this.page}}) - 重要性评分: {{this.importance}}*
+*{{this.caption}} (p.{{this.page}})*
 
-{{/each}}
 {{else}}
-*本文献未检测到与阅读目的高度相关的图表*
+### {{this.caption}}
+> ⚠️ {{this.message}}
+
 {{/if}}
+{{/each}}
+
+{{#unless figures}}
+*本文献未检测到与阅读目的高度相关的图表*
+{{/unless}}
 
 ---
 

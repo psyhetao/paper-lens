@@ -8,10 +8,7 @@ import sys
 import importlib
 
 REQUIRED_LIBS = [
-    ("pymupdf", "fitz", "PDF annotation and manipulation"),
-    ("pdfplumber", "pdfplumber", "PDF text extraction (fallback)"),
-    ("pypdfium2", "pypdfium2", "Fast PDF text extraction and rendering"),
-    ("Pillow", "PIL", "Image processing for figure export"),
+    ("pymupdf", "fitz", "PDF parsing, highlighting, and annotations"),
 ]
 
 def check_python_version():
@@ -70,10 +67,9 @@ def main():
         print("  python scripts/extract_content.py <pdf_path> --purpose deep_dive")
         sys.exit(0)
     else:
-        missing = [lib for lib, _, _ in REQUIRED_LIBS if not check_lib(lib, _, _)]
         print("Missing dependencies detected!")
         print("\nInstall with:")
-        print("  pip install pymupdf pdfplumber pypdfium2 Pillow")
+        print("  pip install pymupdf")
         sys.exit(1)
 
 if __name__ == "__main__":

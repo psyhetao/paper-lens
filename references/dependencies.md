@@ -3,7 +3,7 @@
 ## 必需依赖
 
 ```bash
-pip install pymupdf pdfplumber pypdfium2 Pillow
+pip install pymupdf
 ```
 
 ### 各依赖用途
@@ -11,9 +11,7 @@ pip install pymupdf pdfplumber pypdfium2 Pillow
 | 包名 | 用途 |
 |------|------|
 | pymupdf (fitz) | PDF 标注、高亮、添加注释 |
-| pdfplumber | PDF 文本提取 (备用方案) |
-| pypdfium2 | 快速 PDF 文本提取和页面渲染 |
-| Pillow | 图像处理、图表导出 |
+| (可选) camelot-py | 表格提取（需要额外依赖） |
 
 ## 可选依赖
 
@@ -37,15 +35,9 @@ Windows 用户可能需要先安装 Visual C++ Build Tools：
 pip install pymupdf --upgrade
 ```
 
-### pypdfium2 渲染问题
-确保 Pillow 版本 >= 9.0：
-```bash
-pip install Pillow --upgrade
-```
+### 中文 PDF 乱码/搜索不到文本
+部分 PDF 为扫描件或字体编码特殊，文本层不可用。此时：
+- 术语注释/高亮可能无法定位
+- 图表也可能无法单独导出（矢量或无嵌入图像）
 
-### 中文 PDF 乱码
-pypdfium2 默认支持中文，如果出现乱码，尝试使用 pdfplumber：
-```python
-from extract_content import extract_text
-# 内部会自动回退到 pdfplumber
-```
+paper-lens 会提示“无法提取/无法定位”，不会强行插入整页截图。

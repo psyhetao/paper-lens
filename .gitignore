@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.log
+
+# Local outputs (generated next to PDFs)
+annotations.json
+extracted_content.json
+*_figures/
+*_notes.md
+*_annotated.pdf
