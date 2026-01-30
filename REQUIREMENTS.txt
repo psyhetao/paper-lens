@@ -1,6 +1,0 @@
-# Python dependencies for paper-lens
-pymupdf>=1.23.0
-pdfplumber>=0.10.0
-pypdfium2>=4.30.0      # 新增：用于高效文本提取和图像渲染
-Pillow>=10.0.0         # 新增：用于图像处理
-

@@ -161,8 +161,8 @@ if __name__ == "__main__":
     
     # Auto-generate text notes if requested
     text_content = None
-    if auto_notes:
-        from extract_quotes import extract_text
+if auto_notes:
+        from extract_content import extract_text
         text_content = extract_text(input_pdf)
     
     if annotate_pdf(input_pdf, ann_json, output_pdf, auto_generate_notes=auto_notes, text_content=text_content):
