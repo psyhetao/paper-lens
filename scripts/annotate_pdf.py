@@ -161,7 +161,7 @@ if __name__ == "__main__":
     
     # Auto-generate text notes if requested
     text_content = None
-if auto_notes:
+    if auto_notes:
         from extract_content import extract_text
         text_content = extract_text(input_pdf)
     
