@@ -1,6 +1,12 @@
 ---
 name: paper-lens
 description: 智能文献分析与 PDF 标注工具。根据用户研究背景，提供个性化分析、原句摘录、6 色 PDF 高亮及 Markdown 笔记。
+github_url: https://github.com/psyhetao/paper-lens
+github_hash: a92c7adf0552d8ce5928285522178ab366d8c144
+version: 0.1.0
+created_at: 2026-01-30
+entry_point: scripts/extract_quotes.py
+dependencies: [pymupdf, pdfplumber, pypdfium2, Pillow]
 ---
 
 # paper-lens 🔍
